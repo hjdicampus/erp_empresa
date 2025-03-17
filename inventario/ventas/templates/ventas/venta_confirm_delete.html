@@ -1,0 +1,7 @@
+<h1>Confirmar eliminación</h1>
+<p>¿Seguro que quieres borrar {{ venta }}?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Sí, borrar</button>
+    <a href="{% url 'venta_list' %}">Cancelar</a>
+</form>

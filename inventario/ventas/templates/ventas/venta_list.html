@@ -1,0 +1,10 @@
+<h1>Lista de Ventas</h1>
+<a href="{% url 'venta_create' %}">Nueva Venta</a>
+<ul>
+{% for venta in ventas %}
+    <li>{{ venta }} - 
+        <a href="{% url 'venta_edit' venta.pk %}">Editar</a> |
+        <a href="{% url 'venta_delete' venta.pk %}">Borrar</a>
+    </li>
+{% endfor %}
+</ul>
