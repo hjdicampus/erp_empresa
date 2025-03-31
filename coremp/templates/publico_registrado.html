@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Coremp - ERP Empresarial (Usuario Registrado)</title>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        .header, .footer { background-color: #f4f4f4; padding: 20px; text-align: center; }
+        .nav-bar { background-color: #0078d4; color: white; padding: 10px; }
+        .nav-bar a { color: white; margin: 0 15px; text-decoration: none; }
+        .section { padding: 40px; text-align: center; }
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown-content { display: none; position: absolute; background-color: #f9f9f9; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1; }
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-content a { color: black; padding: 12px 16px; text-decoration: none; display: block; }
+        .dropdown-content a:hover { background-color: #f1f1f1; }
+        .solutions, .demos, .apps, .stories, .news { margin: 20px 0; }
+        .footer a { margin: 0 10px; color: #0078d4; }
+        .message { margin: 10px 0; }
+        .success { color: green; }
+    </style>
+</head>
+<body>
+    <!-- Encabezado -->
+    <div class="header">
+        <h1>Coremp</h1>
+        <div class="nav-bar">
+            <a href="#explorar">Explorar</a>
+            <a href="#precios">Precios</a>
+            <a href="#recursos">Recursos</a>
+            <a href="#soporte">Soporte</a>
+            <a href="{% url 'comprar' %}">Comprar</a>
+            <a href="{% url 'logout' %}">Cerrar sesión</a>
+        </div>
+        {% if messages %}
+            {% for message in messages %}
+                <p class="message success">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <!-- Introducción -->
+    <div class="section">
+        <h2>Coremp</h2>
+        <h3>La nueva era de negocios impulsados por IA</h3>
+        <p>Adapta e innova con aplicaciones empresariales inteligentes de CRM y ERP.</p>
+        <a href="#precios">Ver planes y precios</a> | <a href="#prueba">Prueba gratis</a>
+    </div>
+
+    <!-- Menú de navegación -->
+    <div class="nav-bar">
+        <a href="#overview">Resumen</a>
+        <a href="#soluciones">Soluciones</a>
+        <a href="#demos">Demos</a>
+        <a href="#apps">Apps y complementos</a>
+        <a href="#historias">Historias de clientes</a>
+        <a href="#noticias">Noticias destacadas</a>
+        <a href="#siguientes">Siguientes pasos</a>
+        <a href="#prueba">Prueba gratis</a>
+    </div>
+
+    <!-- Resumen -->
+    <div class="section" id="overview">
+        <h2>Da forma al futuro de tu negocio</h2>
+        <p>Conecta tus equipos, procesos y datos en toda tu organización para crear experiencias excepcionales y agilidad operativa.</p>
+        <div>
+            <h3>Trabaja con IA</h3>
+            <p>Sé más eficiente con funciones de IA integradas en Coremp, disponibles sin costo adicional en licencias seleccionadas.</p>
+        </div>
+        <div>
+            <h3>Une tus datos</h3>
+            <p>Obtén una visión completa de tu negocio conectando datos de cientos de fuentes.</p>
+        </div>
+        <div>
+            <h3>Aumenta la productividad</h3>
+            <p>Colabora y sé más productivo compartiendo información en herramientas como Microsoft Teams.</p>
+        </div>
+        <div>
+            <h3>Adáptate al futuro</h3>
+            <p>Modifica procesos rápidamente con herramientas de bajo código integradas en Coremp.</p>
+        </div>
+    </div>
+
+    <!-- Soluciones -->
+    <div class="section solutions" id="soluciones">
+        <h2>Cualquier organización. Todas las posibilidades.</h2>
+        <p>Aumenta tus ingresos usando IA y datos en tiempo real para entender a tus clientes, personalizar experiencias y cerrar más ventas.</p>
+        <a href="#">Aprende más</a>
+        <h3>Recursos Humanos</h3>
+        <div class="dropdown">
+            <button>Menú RRHH</button>
+            <div class="dropdown-content">
+                <a href="#">Gestión de empleados</a>
+                <a href="#">Nómina</a>
+                <a href="#">Asistencia</a>
+                <a href="#">Capacitación</a>
+                <a href="#">Evaluaciones</a>
+                <a href="#">Vacaciones</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Demos de productos -->
+    <div class="section demos" id="demos">
+        <h2>Haz más con Coremp y IA</h2>
+        <p>Descubre cómo la IA trabaja con las aplicaciones de Coremp para dar ventaja a cada equipo.</p>
+        <ul>
+            <li>Ventas</li>
+            <li>Marketing</li>
+            <li>Servicio al cliente</li>
+            <li>Servicio de campo</li>
+            <li>Cadena de suministro</li>
+            <li>Finanzas</li>
+            <li>Gestión empresarial</li>
+        </ul>
+        <p><strong>Coremp Ventas</strong>: Cierra más tratos y fortalece relaciones con asistencia de IA.</p>
+    </div>
+
+    <!-- Apps y complementos -->
+    <div class="section apps" id="apps">
+        <h2>Mejora Coremp con apps de socios líderes</h2>
+        <p>Añade aplicaciones que personalicen Coremp según las necesidades específicas de tu negocio.</p>
+        <ul>
+            <li>Power BI - Colabora mejor con tus datos. (4.5 ★, 110410 usuarios)</li>
+            <li>Copilot - Tu asistente para el trabajo. (4.4 ★, 56736 usuarios)</li>
+            <li>Adobe Acrobat - Edita y colabora en PDFs. (4.1 ★, 39506 usuarios)</li>
+            <li>Dropbox - Comparte archivos desde cualquier dispositivo. (4.6 ★, 28996 usuarios)</li>
+        </ul>
+        <a href="#">Ver todas las apps</a>
+    </div>
+
+    <!-- Historias de clientes -->
+    <div class="section stories" id="historias">
+        <h2>Cómo los clientes innovan con Coremp</h2>
+        <p><a href="#">Explora todas las historias</a></p>
+        <div>
+            <p><strong>Cliente A</strong>: "Coremp ha sido clave por su flexibilidad extraordinaria." - Juan Pérez, CIO</p>
+            <p>Producto: Coremp Finanzas</p>
+        </div>
+        <div>
+            <p><strong>Cliente B</strong>: "Coremp es ágil y fácil de mantener." - María Gómez, Gerente</p>
+            <p>Producto: Coremp Gestión Empresarial</p>
+        </div>
+    </div>
+
+    <!-- Noticias destacadas -->
+    <div class="section news" id="noticias">
+        <h2>Noticias destacadas</h2>
+        <ul>
+            <li>Anunciando agentes autónomos en Coremp - <a href="#">Aprende más</a></li>
+            <li>Transformación con IA en Coremp - <a href="#">Lee el informe</a></li>
+            <li>Liderazgo en la era de IA - <a href="#">Obtén el e-book</a></li>
+            <li>Transformando ERP con IA generativa - <a href="#">Lee el blog</a></li>
+        </ul>
+    </div>
+
+    <!-- Siguientes pasos -->
+    <div class="section" id="siguientes">
+        <h2>Comienza con Coremp</h2>
+        <p><a href="#">Prueba gratis</a> - Experimenta Coremp por 30 días.</p>
+        <p>Chatea con un experto de Coremp - Disponible L-V, 9:00-18:00. <a href="#">Chatea ahora</a></p>
+        <p>Solicita una llamada - <a href="#">Envía solicitud</a></p>
+        <p>Llama a un experto - L-V, 9:00-18:00. Tel: 982354333</p>
+    </div>
+
+    <!-- Pie de página -->
+    <div class="footer">
+        <p>Coremp - Calle de los Reyes Católicos, 12, 33204 Gijón, Asturias, España</p>
+        <p>Tel: 982354333</p>
+        <a href="#">Twitter</a> <a href="#">LinkedIn</a> <a href="#">YouTube</a> <a href="#">Facebook</a>
+        <p><a href="#">Política de privacidad</a> | <a href="#">Términos de uso</a></p>
+    </div>
+</body>
+</html>

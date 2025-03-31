@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Pago - ERP Empresa</title>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+        .container { max-width: 800px; margin: 50px auto; padding: 20px; text-align: center; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1 { color: #0078d4; }
+        a { color: #0078d4; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        form { margin-top: 20px; text-align: left; }
+        label { display: block; margin: 10px 0 5px; }
+        input, textarea, select { width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; }
+        button { padding: 10px 20px; background-color: #0078d4; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #005bb5; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Procesar Pago</h1>
+        <p>Estás comprando el plan: <strong>{{ plan.nombre }}</strong></p>
+        <p>Precio mensual: ${{ plan.precio_mensual }} (Duración: {{ plan.duracion_meses }} meses)</p>
+
+        <form method="post">
+            {% csrf_token %}
+            <label for="nombre_facturacion">Nombre de facturación:</label>
+            <input type="text" id="nombre_facturacion" name="nombre_facturacion" required>
+
+            <label for="direccion_facturacion">Dirección de facturación:</label>
+            <textarea id="direccion_facturacion" name="direccion_facturacion" required></textarea>
+
+            <label for="metodo_pago">Método de pago:</label>
+            <select id="metodo_pago" name="metodo_pago" required>
+                <option value="Tarjeta">Tarjeta de crédito/débito</option>
+                <option value="Transferencia">Transferencia bancaria</option>
+            </select>
+
+            <button type="submit">Confirmar Compra</button>
+        </form>
+
+        <p><a href="{% url 'comprar' %}">Volver a Comprar</a></p>
+    </div>
+</body>
+</html>
