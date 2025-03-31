@@ -1,7 +1,0 @@
-<h1>Confirmar eliminación</h1>
-<p>¿Seguro que quieres borrar {{ compra }}?</p>
-<form method="post">
-    {% csrf_token %}
-    <button type="submit">Sí, borrar</button>
-    <a href="{% url 'compra_list' %}">Cancelar</a>
-</form>
